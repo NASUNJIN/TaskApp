@@ -20,7 +20,7 @@ type TAddListAction = {
     list: IList;
 }
 
-type TAddTaskActino = {
+type TAddTaskAction = {
     boardId: string;
     listId: string;
     task: ITask;
@@ -84,7 +84,7 @@ const boardSlice = createSlice({
             )
         },
 
-        addTask: (state, { payload }: PayloadAction<TAddTaskActino>) => {
+        addTask: (state, { payload }: PayloadAction<TAddTaskAction>) => {
             state.boardArray.map(board => board.boardId === payload.boardId
                 ? { ...board, 
                     lists: board.lists.map((list) => 
