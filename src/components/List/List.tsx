@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { GrSubtract } from 'react-icons/gr'
 import Task from '../Task/Task'
 import ActionButton from '../ActionButton/ActionButton'
@@ -13,10 +13,9 @@ import { deleteButton, header, listWrapper, name } from './List.css'
 type TListProps = {
   boardId: string;
   list: IList;
-}
+};
 
 const List: FC<TListProps> = ({ list, boardId }) => {
-
   // store에 있는 값 변경
   const dispatch = useTypedDispatch();
 
@@ -50,7 +49,7 @@ const List: FC<TListProps> = ({ list, boardId }) => {
         <div className={name}>{list.listName}</div>
         {/* 표시 */}
         <GrSubtract
-        className={deleteButton}
+          className={deleteButton}
           onClick={() => handleListDelete(list.listId)}
         />  
       </div>
@@ -76,4 +75,4 @@ const List: FC<TListProps> = ({ list, boardId }) => {
   )
 }
 
-export default List
+export default List;

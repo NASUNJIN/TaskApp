@@ -1,7 +1,7 @@
 // 흐름
 //  Action → Dispatch → Reducer → Store
 
-// Toolkit   Reducer   Slice Store Provider react component wrapper
+// Toolkit Reducer  Slice Store Provider react component wrapper
 
 
 import { boardsReducer } from "../slices/boardsSlice";

@@ -71,10 +71,10 @@ export const deleteBoardButton = style({
   padding: vars.spacing.big2,
   backgroundColor: vars.color.mainFaded,
   cursor: "pointer",
-  opacity: 0.6,
+  opacity: 0.8,
   minWidth: 150,
   ":hover": {
-    opacity: 0.8,
+    opacity: 0.9,
   },
 });
 
@@ -90,9 +90,9 @@ export const loggerButton = style({
   padding: vars.spacing.big2,
   backgroundColor: vars.color.mainFaded,
   cursor: "pointer",
-  opacity: 0.6,
+  opacity: 0.8,
   minWidth: 150,
   ":hover": {
-    opacity: 0.8,
+    opacity: 0.9,
   },
 });
