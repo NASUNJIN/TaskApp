@@ -21,7 +21,7 @@ const initialState : TModalState = {
         taskId : "task-0",
         taskName : "task 0",
         taskDescription: "task description",
-        taskOwner : "John"
+        taskOwner : "Sunjin"
     }
 };
 
@@ -31,7 +31,7 @@ const modalSlice = createSlice({
     reducers : {  // 액션 생성하는 함수
         setModalData: (state, {payload}: PayloadAction<TSetModalDataAction>) => {
             state.boardId = payload.boardId;
-            state.boardId = payload.listId;
+            state.listId = payload.listId;
             state.task = payload.task;
         }
     }
