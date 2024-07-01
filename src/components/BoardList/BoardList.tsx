@@ -13,7 +13,7 @@ import { useAuth } from '../../hooks/useAuth';
 type TBoardListProps = {
   activeBoardId : string;
   setActiveBoardId : React.Dispatch<React.SetStateAction<string>>;
-}
+};
 
 const BoardList : FC<TBoardListProps>= ({ activeBoardId, setActiveBoardId }) => {
   const dispatch = useTypedDispatch();
@@ -30,15 +30,15 @@ const BoardList : FC<TBoardListProps>= ({ activeBoardId, setActiveBoardId }) => 
   console.log('isAuth', isAuth);
 
   const handleClick = () => {
-    setIsFormOpen(!isFormOpen)
+    setIsFormOpen(!isFormOpen);
     setTimeout(() => { // 타이밍 문제로 사용
       inputRef.current?.focus();  // Ref가 등록 안되었을 때 = null, Ref 등록되었을 경우 포커스
     }, 0);
-  }
+  };
 
   // 로그인 누르면 옆에 팝업 뜨게 할꺼임
   const handleLogin = () => {
-    signInWithPopup(auth, provider)  // 팝업 이용해서 로그인
+    signInWithPopup(auth, provider) // 팝업 이용해서 로그인
     // 로그인 성공했을 경우
     .then(userCredential => {
       console.log(userCredential);
@@ -48,13 +48,13 @@ const BoardList : FC<TBoardListProps>= ({ activeBoardId, setActiveBoardId }) => 
           email: userCredential.user.email,
           id: userCredential.user.uid
         })
-      )
+      );
     })
     // 로그인 실패할 경우
     .catch((error) => {
       console.error(error);
-    })
-  }
+    });
+  };
 
   // 로그아웃
   const handleSignOut = () => {
@@ -62,12 +62,12 @@ const BoardList : FC<TBoardListProps>= ({ activeBoardId, setActiveBoardId }) => 
     .then(() => {  // 성공할 경우 userdata 초기화
       dispatch(
         removeUser()  // userSlice - removeUser
-      )
+      );
     })
     .catch((error) => {
       console.error(error)
-    })
-  }
+    });
+  };
 
   return (
     <div className={container}>
@@ -110,4 +110,4 @@ const BoardList : FC<TBoardListProps>= ({ activeBoardId, setActiveBoardId }) => 
   )
 }
 
-export default BoardList
+export default BoardList;

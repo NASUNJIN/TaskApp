@@ -6,9 +6,9 @@ import { body, closeButton, header, modalWindow, title, wrapper } from './Logger
 
 type TLoggerModalProps = {
   setIsLoggerOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
 
-const LoggerModal: FC<TLoggerModalProps> = (setIsLoggerOpen) => {
+const LoggerModal: FC<TLoggerModalProps> = ({ setIsLoggerOpen }) => {
 
   const logs = useTypedSelector((state) => state.logger.logArray);
 
@@ -30,4 +30,4 @@ const LoggerModal: FC<TLoggerModalProps> = (setIsLoggerOpen) => {
   )
 }
 
-export default LoggerModal
+export default LoggerModal;

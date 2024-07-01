@@ -69,7 +69,7 @@ const EditModal = () => {
     );
 
     dispatch(setModalActive(false));
-  }
+  };
 
   // 삭제하기 버튼
   const handleDelete = () => {
@@ -92,7 +92,7 @@ const EditModal = () => {
     ); 
 
     dispatch(setModalActive(false));
-  }
+  };
 
   return (
     <div className={wrapper}>

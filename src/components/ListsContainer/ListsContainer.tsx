@@ -21,4 +21,4 @@ const ListsContainer: FC<TListsContainerProps> = ({ lists,boardId }) => {
   )
 }
 
-export default ListsContainer
+export default ListsContainer;

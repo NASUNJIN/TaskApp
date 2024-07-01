@@ -31,18 +31,13 @@ const List: FC<TListProps> = ({ list, boardId }) => {
         logTimestamp: String(Date.now())
       })
     )
-  }
+  };
 
   // task누를 시 모달 띄우기
-  const handleTaskChange = (
-    boardId: string,
-    listId: string,
-    taskId: string,
-    task: ITask,
-  ) => {
+  const handleTaskChange = (boardId: string, listId: string, task: ITask) => {
     dispatch(setModalData({ boardId, listId, task }));  // modalSlice
     dispatch(setModalActive(true)); // boardSlice
-  }
+  };
 
   return (
     <Droppable droppableId={list.listId}>
@@ -63,7 +58,7 @@ const List: FC<TListProps> = ({ list, boardId }) => {
             {list.tasks.map((task, index) => (
               <div 
                 onClick={() => 
-                  handleTaskChange(boardId, list.listId, task.taskId, task)
+                  handleTaskChange(boardId, list.listId, task)
                 } 
                 key={task.taskId} 
               >

@@ -13,25 +13,18 @@ type TDropDownFormProps = {
   list?: boolean;
 };
 
-const DropDownForm: FC<TDropDownFormProps> = ({
-  boardId,
-  listId, 
-  setIsFormOpen,
-  list,
-}) => {
+const DropDownForm: FC<TDropDownFormProps> = ({ boardId, listId, setIsFormOpen, list }) => {
   const dispatch = useTypedDispatch();
 
   // 새로운 일 등록 눌렀을 때, 일의 제목을 입력하는 곳의 값을 기억하기 위한 state
   const [text, settext] = useState('');  
-  const formPlaceholder = list 
-    ? "리스트의 제목을 입력하세요" 
-    : "일의 제목을 입력하세요";
 
-  const buttonTitle = list ? "리스트 추가하기" : "일 추가하기"
+  const formPlaceholder = list ? "리스트의 제목을 입력하세요" : "일의 제목을 입력하세요";
+  const buttonTitle = list ? "리스트 추가하기" : "일 추가하기";
 
   const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     settext(e.target.value);
-  }
+  };
 
   const handleButtonClick = () => {
     // text 없을 경우 아무일도 안일어남
@@ -74,7 +67,7 @@ const DropDownForm: FC<TDropDownFormProps> = ({
         );
       }
     }
-  }
+  };
 
   return (
     <div className={list ? listForm : taskForm}>
@@ -93,7 +86,7 @@ const DropDownForm: FC<TDropDownFormProps> = ({
         <FiX className={close} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DropDownForm
+export default DropDownForm;
